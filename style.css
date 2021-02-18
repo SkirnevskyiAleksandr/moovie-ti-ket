@@ -1,0 +1,71 @@
+
+
+.background-video{
+    position: fixed;
+    z-index: -1;
+    min-width: 100%;
+    min-height: 100%;
+}
+
+.hall{
+    display: flex;
+    flex-direction: column;
+    background: rgba(233,110,45,0.5);
+    width: 45%;
+}
+.hall__row{
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items:center;
+}
+.hall__chair{
+    /* background: gray; */
+    width: 50px;
+    height: 50px;
+    margin: 3px;
+    text-align: center;
+    border-radius: 5px;
+}
+.check__box{
+    display:flex;
+    width:50px;
+    height:50px;
+    margin: 5px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    background: rgb(251,230,191);
+    
+}
+.check__input{
+    position: absolute;
+    width:1px;
+    height: 1px;
+    border: 0;
+    padding: 0;
+    clip: rect(0,0,0,0);
+    overflow: hidden;
+}
+.check__input:checked + .check__box{
+    background:green;
+}
+.check__input:focus + .check__box{
+    width: 52px;
+    height: 52px;
+    box-shadow: 0 0 0 0.2em rgb(97, 65, 5);
+}
+.check__input:disabled + .check__box{
+    background:#6E3B1A;
+    width: 45px;
+    height: 45px;
+}
+
+.row-number-left{
+    display: inline-block;
+}
+.row-number-right{
+    display: inline-block;
+    margin-right: 10px;
+    
+}
