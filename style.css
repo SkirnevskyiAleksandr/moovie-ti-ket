@@ -6,11 +6,15 @@
     min-width: 100%;
     min-height: 100%;
 }
-
+.container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
 .hall{
     display: flex;
     flex-direction: column;
-    background: rgba(233,110,45,0.5);
+    background: rgba(233,110,45,0.8);
     width: 45%;
 }
 .hall__row{
@@ -51,9 +55,11 @@
     background:green;
 }
 .check__input:focus + .check__box{
-    width: 52px;
-    height: 52px;
-    box-shadow: 0 0 0 0.2em rgb(97, 65, 5);
+    box-shadow: 0 0 0 0.2em rgb(163,67,29);
+}
+.check__input:hover + .check__box{
+    box-shadow: 0 0 0 0.2em rgb(163,67,29);
+    transition: all 0.5s ease-out ;
 }
 .check__input:disabled + .check__box{
     background:#6E3B1A;
@@ -61,11 +67,49 @@
     height: 45px;
 }
 
-.row-number-left{
-    display: inline-block;
+
+
+/* poster */
+.poster{
+    width: 400px;
 }
-.row-number-right{
-    display: inline-block;
-    margin-right: 10px;
+.poster-picture{
+    width:100%;
+    height: auto;
+    opacity: 0.9;
+}
+
+/* description-row */
+.discription-row{
+    padding-top: 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around   ;
+}
+.description-row__item{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width:1000px;
+    height: 50px;
     
+}
+.free{
+    width: 30px;
+    height: 30px;
+    border-radius: 5px;
+    background: rgb(251,230,191);
+}
+.taken{
+    width: 30px;
+    height: 30px;
+    border-radius: 5px;
+    background: #6E3B1A;
+}
+.your-chose{
+    width: 30px;
+    height: 30px;
+    border-radius: 5px;
+    background: green;
 }
