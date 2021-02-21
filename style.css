@@ -7,30 +7,78 @@
     min-height: 100%;
 }
 .container{
+    height: 100%;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    align-items: center;
 }
+
 .hall{
     display: flex;
     flex-direction: column;
+    margin-top: 5%;
+    border-radius:10px;
     background: rgba(233,110,45,0.8);
     width: 45%;
 }
+
+/* moovie-select */
+.hall__row_moovie-select{
+    width: 75%;
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 10px auto;
+    align-items:center;
+}
+.moovie-select{
+    margin-right: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.moovie-select:hover {
+    box-shadow: 0 0 0 0.2em rgb(163,67,29);
+    transition: all ease-out 0.2s;
+}
+.moovie-select:not(:hover) {
+    transition: all ease-out 0.4s;
+}
+.moovie-select:focus{
+    box-shadow: 0 0 0 0.2em rgb(163,67,29);
+    transition: all ease-out 0.2s ;
+    outline: none;
+}
+.moovie-select:not(:focus){
+    transition: 0.5s;
+}
+.moovie-date{
+    border-radius: 5px;
+    cursor: pointer;
+}
+.moovie-date:focus{
+    box-shadow: 0 0 0 0.2em rgb(163,67,29);
+    transition: all 0.2s ease-out ;
+    outline: none;
+}
+.moovie-date:not(:focus){
+transition: 0.5s;
+}
+.moovie-date:hover{
+    box-shadow: 0 0 0 0.2em rgb(163,67,29);
+    transition: all 0.2s ease-out ;
+}
+.moovie-date:not(:hover){
+    transition: 0.5s;
+}
+/* hall-rows */
 .hall__row{
     display:flex;
     flex-direction: row;
     justify-content: center;
     align-items:center;
 }
-.hall__chair{
-    /* background: gray; */
-    width: 50px;
-    height: 50px;
-    margin: 3px;
-    text-align: center;
-    border-radius: 5px;
-}
+
 .check__box{
     display:flex;
     width:50px;
@@ -40,8 +88,9 @@
     align-items: center;
     border-radius: 5px;
     background: rgb(251,230,191);
-    
+    cursor:pointer;
 }
+
 .check__input{
     position: absolute;
     width:1px;
@@ -59,24 +108,16 @@
 }
 .check__input:hover + .check__box{
     box-shadow: 0 0 0 0.2em rgb(163,67,29);
-    transition: all 0.5s ease-out ;
+    transition: all 0.2s ease-out ;
+}
+.check__input:not(:hover) + .check__box{
+    transition: 0.5s;
+}
+.check__input:disabled:hover + .check__box{
+    box-shadow:none;
 }
 .check__input:disabled + .check__box{
-    background:#6E3B1A;
-    width: 45px;
-    height: 45px;
-}
-
-
-
-/* poster */
-.poster{
-    width: 400px;
-}
-.poster-picture{
-    width:100%;
-    height: auto;
-    opacity: 0.9;
+    background: #6E3B1A;
 }
 
 /* description-row */
@@ -112,4 +153,125 @@
     height: 30px;
     border-radius: 5px;
     background: green;
+}
+/*Book Now*/
+.book-now{
+    width:100%;
+    height:40px;
+    line-height: 40px;
+    text-align: center;
+    margin-top: auto;
+    margin-bottom: 0;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-style: none;
+    background:green;
+    font-size:x-large;
+    cursor: pointer;
+}
+.book-now:hover{
+    box-shadow: 0 0 0 0.1em rgb(251,230,191);
+    transition: all 0.2s ease-out;
+}
+.book-now:not(:hover){
+    transition: 0.5s;
+}
+.book-now:focus {
+    box-shadow: 0 0 0 0.1em rgb(251,230,191);
+    transition: all 0.2s ease-out;
+    outline: none;
+}
+.book-now:not(:focus){
+    transition: 0.5s;
+}
+
+/* poster */
+.poster{
+    width: 25%;
+    margin-top: 5%;
+}
+.picture-container{
+    margin-bottom: 0;
+    padding-bottom: 0;
+    height: 75%;
+}
+.poster-picture{
+    width:100%;
+    height: auto;
+    opacity: 0.9;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+.poster-picture__description{
+    margin: 0;
+    padding: 0px 10px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    background:rgb(251,230,191);
+    opacity: 0.9;
+}
+@media  (max-width: 1355px){
+    .hall{
+        width:55%;
+    }
+    .poster{
+        width: 30%;
+    }
+}
+@media  (max-width: 1100px){
+    .check__box{
+        width:45px;
+        height:45px;
+        margin:3px;  
+    }
+}
+@media(max-width: 980px){
+    .container{
+        flex-direction: column;
+    }
+    .hall{
+        order:2;
+        width: 75%;
+    }
+    .poster{
+        order:1;
+        width:75%;
+    }
+    .check__box{
+        width:50px;
+        height:50px;
+        margin: 3px;  
+    }
+}
+@media(max-width:810px){
+    .check__box{
+        width:40px;
+        height:40px;
+        margin: 3px;  
+    }
+}
+@media(max-width:640px){
+    .check__box{
+        width:40px;
+        height:40px;
+        margin: 2px;  
+    }
+    .hall, .poster{
+        width:95%;
+    }
+}
+@media(max-width:490px){
+    .check__box{
+        width:35px;
+        height:35px;
+        margin: 2px;  
+    }
+    .hall, .poster{
+        width:100%;
+    }
+    .poster-picture__description{
+        padding: 0px 7px;
+    }
 }
